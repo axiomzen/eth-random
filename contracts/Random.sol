@@ -1,0 +1,16 @@
+pragma solidity ^0.4.4;
+
+contract Random {
+  uint64 _seed = 0;
+
+  event TestRandom(uint64 random);
+
+
+  // return a pseudo random number between lower and upper bounds
+  // given the number of previous blocks it should hash.
+  function random(uint64 upper) public returns (uint64 randomNumber) {
+    _seed = uint64(sha3(sha3(sha3(block.blockhash(block.number-1), _seed), msg.sender), now)) % upper;
+    TestRandom(_seed);
+    return _seed;
+  }
+}
