@@ -18,7 +18,7 @@ contract('Random', async function(accounts) {
 
     const results = [];
 
-    generator.testRandom().watch(function(error, result) {
+    generator.TestRandom().watch(function(error, result) {
       assert(!error, "Error occured generating random.")
       const rand = result.args["random"].toNumber()
       results.push(rand)
@@ -27,7 +27,7 @@ contract('Random', async function(accounts) {
     });
 
     for (let i = 1; i < numberOfChecks; i++) {
-      let tx = await generator.random(0, max, 1);
+      let tx = await generator.random(max);
     }
 
     // after the loop is done wait a bit for events to finish recording
@@ -43,7 +43,7 @@ contract('Random', async function(accounts) {
     assert(avg < max * 0.6, 'avg of sample results must be within 10% of half');
 
     // https://github.com/ethereum/wiki/wiki/JavaScript-API#example-53
-    generator.testRandom().stopWatching();
+    generator.TestRandom().stopWatching();
 
     return;
   });
