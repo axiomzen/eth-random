@@ -50,10 +50,38 @@ contract Foo {
 ```
 
 
-## Intention
+## Approach
+
+Our approach is simple:
+
+<img src="http://i.imgur.com/n6dFbpv.png" alt="HASH ALL THE THINGS!" width="400" height="300">
+
+Entropy is hard, entropy on Ethereum is even harder. The true strength of having a global random contract is that the more users use our contract the more entropy we can gather.
+
+// TODO: rewrite the above
 
 
 
 ## Statistics
+
+### 0-9
+#### 208 runs
+|      Item      | Occurences  |
+|----------|-------------|
+| 1 |      26 |
+| 4 |      25 |
+| 5 |      23 |
+| 0 |      21 |
+| 3 |      20 |
+| 8 |      20 |
+| 2 |      19 |
+| 6 |      19 |
+| 9 |      19 |
+| 7 |      16 |
+
+
+### 0 - 10000
+#### 150 runs
+All occurrences were unique
 
 ## Contributing
