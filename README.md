@@ -61,12 +61,11 @@ Entropy is hard, entropy on Ethereum is even harder. The true strength of having
 // TODO: rewrite the above
 
 
-
 ## Statistics
 
 ### 0-9
 #### 208 runs
-|      Item      | Occurences  |
+|      Item      | Occurrences  |
 |----------|-------------|
 | 1 |      26 |
 | 4 |      25 |
@@ -85,3 +84,11 @@ Entropy is hard, entropy on Ethereum is even harder. The true strength of having
 All occurrences were unique
 
 ## Contributing
+
+- Ensure the task you're completing has an issue and and has no assignee
+- Before beginning work on a task, assign yourself to the task
+- Fork the repo
+- Complete task on your Fork
+- Create PR
+- Get PR reviewed (you may be asked for changes, if so, implement them in the same PR)
+- PR will be merged by maintainers!
