@@ -5,9 +5,12 @@ An Ethereum contract for generating pseudo-random numbers.
 ## Usage
 
 ### Step 0: Locating the contract
+
+*On the Ethereum network:*
 The Ethereum contract can be found at the address: `TODO: Add deployed address`.
 
-If you intend to use Random in a local test network you can do so by either deploying [the source](./contracts/Random.sol) or the byte code (run `truffle compile` then grab byte code from build).
+*On a local test network:*
+In a local test network, you can use random by either deploying [the source](./contracts/Random.sol) or the byte code (run `truffle compile` then grab byte code from build). After deploying the contract, locate the address it occupies.
 
 ### Step 1: Add random protocol
 
