@@ -7,7 +7,7 @@ An Ethereum contract for generating pseudo-random numbers.
 ### Step 0: Locating the contract
 The Ethereum contract can be found at the address: `TODO: Add deployed address`.
 
-If you intend to use Random in a local test network you can do so by either deploying [the source](./contracts/Random.sol) or [the byte code.](`TODO: add link to byte code`)
+If you intend to use Random in a local test network you can do so by either deploying [the source](./contracts/Random.sol) or the byte code (run `truffle compile` then grab byte code from build).
 
 ### Step 1: Add random protocol
 
@@ -51,6 +51,8 @@ contract Foo {
 
 
 ## Intention
+
+
 
 ## Statistics
 
