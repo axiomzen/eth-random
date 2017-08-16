@@ -59,6 +59,7 @@ contract Foo {
 Given 5000 runs
 
 | Occurrences | Share |
+|-------------|-------|
 | 1 | 97.6% (4 880) |
 | 2 | 2.38% (119) |
 | 3 | 0.02% (1) |
@@ -87,7 +88,7 @@ Given 208 runs
 
 ### 0 - 10000
 
-Given 150 runs.
+Given 150 runs
 
 All occurrences were unique
 
