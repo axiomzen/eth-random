@@ -56,14 +56,21 @@ contract Foo {
 
 ### 0 - 100 000
 
-given 5000 runs
+Given 5000 runs
+
+| Occurrences | Share |
+| 1 | 97.6% (4 880) |
+| 2 | 2.38% (119) |
+| 3 | 0.02% (1) |
 
 0.02% of numbers occurred three times
 2.38% of numbers occurred twice
 97.6% of numbers occurred once
 
 ### 0-9
-#### 208 runs
+
+Given 208 runs
+
 |      Item      | Occurrences  |
 |----------|-------------|
 | 1 |      26 |
@@ -79,7 +86,9 @@ given 5000 runs
 
 
 ### 0 - 10000
-#### 150 runs
+
+Given 150 runs.
+
 All occurrences were unique
 
 ## Contributing
