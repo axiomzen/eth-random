@@ -64,10 +64,6 @@ Given 5000 runs
 | 2 | 2.38% (119) |
 | 3 | 0.02% (1) |
 
-0.02% of numbers occurred three times
-2.38% of numbers occurred twice
-97.6% of numbers occurred once
-
 ### 0-9
 
 Given 208 runs
