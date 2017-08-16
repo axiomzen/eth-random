@@ -66,6 +66,14 @@ Entropy is hard, entropy on Ethereum is even harder. The true strength of having
 
 ## Statistics
 
+### 0 - 100 000
+
+given 5000 runs
+
+0.02% of numbers occurred three times
+2.38% of numbers occurred twice
+97.6% of numbers occurred once
+
 ### 0-9
 #### 208 runs
 |      Item      | Occurrences  |
