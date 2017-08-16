@@ -52,18 +52,6 @@ contract Foo {
 }
 ```
 
-
-## Approach
-
-Our approach is simple:
-
-<img src="http://i.imgur.com/n6dFbpv.png" alt="HASH ALL THE THINGS!" width="400" height="300">
-
-Entropy is hard, entropy on Ethereum is even harder. The true strength of having a global random contract is that the more users use our contract the more entropy we can gather.
-
-// TODO: rewrite the above
-
-
 ## Statistics
 
 ### 0 - 100 000
