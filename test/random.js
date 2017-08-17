@@ -18,7 +18,6 @@ contract('Random', async function(accounts) {
     const contract = await RandomContract.deployed();
     const address = contract.contract.address;
     const generator = await Random.deployed();
-    generator.setRandom(address)
 
     const results = [];
 
@@ -31,7 +30,7 @@ contract('Random', async function(accounts) {
     });
 
     for (let i = 1; i < numberOfChecks; i++) {
-      let tx = await generator.produceRandom(max);
+      await generator.produceRandom(max);
     }
 
     // after the loop is done wait a bit for events to finish recording

@@ -9,8 +9,8 @@ contract RandomTestWrapper {
   event TestRandom(uint64 random);
 
 
-  function setRandom(address deployed) public {
-    random = Random(deployed);
+  function RandomTestWrapper(address randomContractAddress) {
+    random = Random(randomContractAddress);
   }
 
 
