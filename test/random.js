@@ -1,4 +1,5 @@
-var Random = artifacts.require("./Random.sol");
+var RandomContract = artifacts.require("./Random.sol");
+var Random = artifacts.require("./RandomTestWrapper.sol");
 
 async function sleep(time) {
   await new Promise(function(resolve, reject) {
@@ -14,7 +15,10 @@ contract('Random', async function(accounts) {
     console.log("    Verifying though brute force: may take a while...");
     console.log("    Running: " + numberOfChecks + " checks");
 
+    const contract = await RandomContract.deployed();
+    const address = contract.contract.address;
     const generator = await Random.deployed();
+    generator.setRandom(address)
 
     const results = [];
 
@@ -27,7 +31,7 @@ contract('Random', async function(accounts) {
     });
 
     for (let i = 1; i < numberOfChecks; i++) {
-      let tx = await generator.random(max);
+      let tx = await generator.produceRandom(max);
     }
 
     // after the loop is done wait a bit for events to finish recording
