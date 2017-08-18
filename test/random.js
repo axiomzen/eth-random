@@ -1,4 +1,3 @@
-var RandomContract = artifacts.require("./Random.sol");
 var Random = artifacts.require("./RandomTestWrapper.sol");
 
 async function sleep(time) {
@@ -15,8 +14,6 @@ contract('Random', async function(accounts) {
     console.log("    Verifying though brute force: may take a while...");
     console.log("    Running: " + numberOfChecks + " checks");
 
-    const contract = await RandomContract.deployed();
-    const address = contract.contract.address;
     const generator = await Random.deployed();
 
     const results = [];
