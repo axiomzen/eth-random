@@ -54,7 +54,7 @@ contract Foo {
 
 ## Disclosure
 
-Given the distributed, decentralized nature of dapps, any full miner has the potential to know the output of random. Let it be known that this pseudo random generator is not perfect and may not be the best option for highly sensitive mathematical operations. If you're in need of a highly secure alternative, it may be best to pursue an off-chain oracle.
+Given the distributed, decentralized nature of dapps, any full miner has the ability to know and potential to influence the output of random. Let it be known that this pseudo random generator is not perfect and may not be the best option for highly sensitive applications. If you're in need of a highly secure alternative, it may be best to pursue an off-chain oracle.
 
 ## Statistics
 
