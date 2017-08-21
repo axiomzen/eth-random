@@ -10,7 +10,7 @@
     "solidity",
     "random"
   ],
-  "author": "Axiom Zen <kai@axiomzen.co> (https://www.axiomzen.co/)",
+  "author": "Axiom Zen <dev@axiomzen.co> (https://www.axiomzen.co/)",
   "license": "MIT License",
   "bugs": {
     "url": "https://github.com/axiomzen/random-eth/issues"
