@@ -1,10 +1,10 @@
 var Random = artifacts.require("./Random.sol");
-var RandomTestWrapper = artifacts.require("./RandomTestWrapper.sol")
+var RandomWrapper = artifacts.require("./RandomWrapper.sol")
 
 module.exports = function(deployer) {
   deployer.deploy(Random).then(function() {
     if (deployer.network == 'development') {
-      return deployer.deploy(RandomTestWrapper, Random.address);
+      return deployer.deploy(RandomWrapper, Random.address);
     }
   });
 };
