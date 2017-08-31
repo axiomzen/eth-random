@@ -1,22 +1,20 @@
 pragma solidity ^0.4.4;
 
-import { Random } from "../contracts/Random.sol";
+import { Random } from "./Random.sol";
 
-contract RandomTestWrapper {
+contract RandomWrapper {
   Random random;
+  uint64 public output = 0;
 
 
-  event TestRandom(uint64 random);
-
-
-  function RandomTestWrapper(address randomContractAddress) {
+  function RandomWrapper(address randomContractAddress) {
     random = Random(randomContractAddress);
   }
 
 
   function produceRandom(uint64 upper) public returns (uint64) {
     uint64 rand = random.random(upper);
-    TestRandom(rand);
+    output = rand;
     return rand;
   }
 }

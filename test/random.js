@@ -1,4 +1,4 @@
-var Random = artifacts.require("./RandomTestWrapper.sol");
+var Random = artifacts.require("./RandomWrapper.sol");
 
 async function sleep(time) {
   await new Promise(function(resolve, reject) {
@@ -18,16 +18,12 @@ contract('Random', async function(accounts) {
 
     const results = [];
 
-    generator.TestRandom().watch(function(error, result) {
-      assert(!error, "Error occured generating random.")
-      const rand = result.args["random"].toNumber()
-      results.push(rand)
-      assert(rand >= 0, "Random number was under minimum.");
-      assert(rand <= max, "Random number was over maximum.");
-    });
-
     for (let i = 1; i < numberOfChecks; i++) {
       await generator.produceRandom(max);
+      let random = await generator.output();
+      assert(random.toNumber() >= 0, "Random number was under minimum.");
+      assert(random.toNumber() <= max, "Random number was over maximum.");
+      results.push(random.toNumber());
     }
 
     // after the loop is done wait a bit for events to finish recording
@@ -41,9 +37,6 @@ contract('Random', async function(accounts) {
     // make sure the average is within a certain margin
     assert(avg > max * 0.4, 'avg of sample results must be within 10% of half');
     assert(avg < max * 0.6, 'avg of sample results must be within 10% of half');
-
-    // https://github.com/ethereum/wiki/wiki/JavaScript-API#example-53
-    generator.TestRandom().stopWatching();
 
     return;
   });
