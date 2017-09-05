@@ -29,13 +29,13 @@ If you're in need of a highly secure alternative, it may be best to look into or
 The Ethereum contract can be found at the following addresses:
 
 ### Main net
-- random: `0x0230CfC895646d34538aE5b684d76Bf40a8B8B89`
+- random: `0x0230CfC895646d34538aE5b684d76Bf40a8B8B89` [etherscan](https://etherscan.io/address/0x0230CfC895646d34538aE5b684d76Bf40a8B8B89#code)
 
 ### Rinkeby
-- random: `0x606b7f97bFEaCDf430059e6ef8918F2BaD1EF7FD`
+- random: `0x606b7f97bFEaCDf430059e6ef8918F2BaD1EF7FD` [etherscan](https://rinkeby.etherscan.io/address/0x606b7f97bFEaCDf430059e6ef8918F2BaD1EF7FD#code)
 
 ### Ropsten
-- random: `0x1637140C895e01d14be5a7A42Ec2c5BB22893713`
+- random: `0x1637140C895e01d14be5a7A42Ec2c5BB22893713` [etherscan](https://ropsten.etherscan.io/address/0x1637140c895e01d14be5a7a42ec2c5bb22893713#code)
 
 *On a local test network:*
 In a local test network, you can use random by deploying [the source](./contracts/Random.sol). After deploying the contract, locate the address it occupies.
