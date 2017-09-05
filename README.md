@@ -1,8 +1,24 @@
-# Random for Solidity
+# Random for Solidity (eth-random)
+
 An Ethereum contract for generating pseudo-random numbers.
 
+This is our take implementing some of the simplest and efficient way to generate a random
+number of arbitrary size over the Ethereum network. Some of our main goals are to make a
+cheap, repeatable way to generate a secure number for creating low value assets.
 
-## Usage
+We theorize the strength of this approach come from developer usage! The more people
+using it makes the the _seed_ value more unpredictable.
+
+## Caveats
+
+Given the distributed, decentralized nature of dapps, a miner with significant hashing power has potential to influence the Random's output by manipulating the block timestamp, which is the biggest source of entropy (along the shared seed).
+
+Also be very careful when letting users call a function that calls random, since there is
+some degree of influence at the time of the call.
+
+If you're in need of a highly secure alternative, it may be best to look into oracles [such as oraclize](https://docs.oraclize.it/#security-deepdive-advanced-datasources-random-data-source)
+
+# Usage
 
 ### Step 0: Locating the contract
 
@@ -16,9 +32,7 @@ In a local test network, you can use random by either deploying [the source](./c
 
 In order to interact with random in a convenient manner, we'll create a contract that declares the types of random we wish to use. (Note: see [here](`TODO: add link to types of random doc`))
 
-
-
-``` Solidity
+```solidity
 contract RandomAPI {
   function random(uint64 upper) public returns (uint64 randomNumber);
 }
@@ -28,7 +42,7 @@ contract RandomAPI {
 
 Once you've located the contract's address and have an API, you can initialize the API with the address.
 
-``` Solidity
+```solidity
 import { RandomAPI } from "RandomAPI.sol";
 
 contract Foo {
@@ -40,7 +54,7 @@ contract Foo {
 
 Now that we have our variable initialized, we can use it wherever we want the joy of randomness!
 
-``` Solidity
+```solidity
 import { RandomAPI } from "RandomAPI.sol";
 
 contract Foo {
@@ -51,10 +65,6 @@ contract Foo {
   }
 }
 ```
-
-## Disclosure
-
-Given the distributed, decentralized nature of dapps, a miner with significant hashing power has potential to influence the Random's output by manipulating the block timestamp. If you're in need of a highly secure alternative, it may be best to pursue an off-chain oracle.
 
 ## Statistics
 
@@ -86,18 +96,12 @@ Given 208 runs
 | 7 |      16 |
 
 
-### 0 - 10000
-
-Given 150 runs
-
-All occurrences were unique
-
 ## Contributing
 
 - Ensure the task you're completing has an issue and and has no assignee
 - Before beginning work on a task, assign yourself to the task
 - Fork the repo
 - Complete task on your Fork
-- Create PR
+- Create PR against the branch you forked from
 - Get PR reviewed (you may be asked for changes, if so, implement them in the same PR)
-- PR will be merged by maintainers!
+- PR will be merged by maintainers
