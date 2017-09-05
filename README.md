@@ -1,36 +1,48 @@
 # Random for Solidity (eth-random)
 
+<a href="https://zenhub.com"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png"></a>
+
 An Ethereum contract for generating pseudo-random numbers.
 
-This is our take implementing some of the simplest and efficient way to generate a random
-number of arbitrary size over the Ethereum network. Some of our main goals are to make a
-cheap, repeatable way to generate a secure number for creating low value assets.
+Our take for implementing some of the simplest and efficient way to generate
+a random number of arbitrary size over the Ethereum network.
 
-We theorize the strength of this approach come from developer usage! The more people
-using it makes the the _seed_ value more unpredictable.
+The motivation for this project came from the need of a tested and cheap way
+to create random assets. Despite a couple of posts and comments on the interenet
+there is no single contract for it, but the strength of this approach come from
+developer usage! The more people using the same contract makes the the internal
+_seed_ value more unpredictable and therefore offer stronger results (much
+like the blockchain itself).
 
 ## Caveats
 
-Given the distributed, decentralized nature of dapps, a miner with significant hashing power has potential to influence the Random's output by manipulating the block timestamp, which is the biggest source of entropy (along the shared seed).
+The block timestamp is not terribly unpredicatable and yet is one of the strongest sources
+of entropy available in chain along with the internal seed.
 
-Also be very careful when letting users call a function that calls random, since there is
-some degree of influence at the time of the call.
+Ideally, the caller of Random function should not have interest in the result, nor let
+interested users choose at which block the random will be called.
 
 If you're in need of a highly secure alternative, it may be best to look into oracles [such as oraclize](https://docs.oraclize.it/#security-deepdive-advanced-datasources-random-data-source)
 
 # Usage
 
-### Step 0: Locating the contract
+The Ethereum contract can be found at the following addresses:
 
-*On the Ethereum network:*
-The Ethereum contract can be found at the address: `TODO: Add deployed address`.
+### Main net
+- random: `0x0230CfC895646d34538aE5b684d76Bf40a8B8B89`
+
+### Rinkeby
+- random: `0x606b7f97bFEaCDf430059e6ef8918F2BaD1EF7FD`
+
+### Ropsten
+- random: `0x1637140C895e01d14be5a7A42Ec2c5BB22893713`
 
 *On a local test network:*
-In a local test network, you can use random by either deploying [the source](./contracts/Random.sol) or the byte code (run `truffle compile` then grab byte code from build). After deploying the contract, locate the address it occupies.
+In a local test network, you can use random by deploying [the source](./contracts/Random.sol). After deploying the contract, locate the address it occupies.
 
-### Step 1: Add random protocol
+### Step 1: Declare the random interface
 
-In order to interact with random in a convenient manner, we'll create a contract that declares the types of random we wish to use. (Note: see [here](`TODO: add link to types of random doc`))
+You may use it with truffle (say creating a file "RandomAPI.sol") or copying into your contract.
 
 ```solidity
 contract RandomAPI {
@@ -38,21 +50,9 @@ contract RandomAPI {
 }
 ```
 
-### Step 2: Initialize random
+### Step 2: Initialize and use random
 
-Once you've located the contract's address and have an API, you can initialize the API with the address.
-
-```solidity
-import { RandomAPI } from "RandomAPI.sol";
-
-contract Foo {
-  RandomAPI api = RandomAPI(/* Add address here */);
-}
-```
-
-### Step 3: Use random
-
-Now that we have our variable initialized, we can use it wherever we want the joy of randomness!
+Once you've located the contract's address, you can initialize the API with the address.
 
 ```solidity
 import { RandomAPI } from "RandomAPI.sol";
@@ -61,10 +61,15 @@ contract Foo {
   RandomAPI api = RandomAPI(/* Add address here */);
 
   function favouriteNumber() returns (uint64) {
-    return api.random(2**64 - 1);
+    return api.random(10**6 - 1);
   }
 }
 ```
+
+We can use it wherever we want the joy of randomness!
+
+
+
 
 ## Statistics
 
