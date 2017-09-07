@@ -2,27 +2,25 @@
 
 <a href="https://zenhub.com"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png"></a>
 
-An Ethereum contract for generating pseudo-random numbers.
+Eth-Random is an Ethereum contract for generating pseudo-random numbers.
 
-Our take for implementing some of the simplest and efficient way to generate
+Our goal - Implementing the simplest and efficient ways to generate
 a random number of arbitrary size over the Ethereum network.
 
-The motivation for this project came from the need of a tested and cheap way
-to create random assets. Despite a couple of posts and comments spread around
-the internet we couldn't find a single common resource, but the very strength
-of this approach come from developer usage! The more people using the same
-contract makes the the internal _seed_ value more unpredictable and therefore
-offer stronger results.
+The motivation for this project came from a need for a true and cheap way
+to create random assets. Despite a couple of posts and comments found on the internet, we couldn't find a single common resource. However, the beauty and strength
+of our approach comes from growth via developer usage! The more people using the same
+contract the more the internal _seed_ value becomes unpredictable, generating stronger results.
 
 ## Caveats
 
-The block timestamp is not terribly unpredictable and yet is one of the strongest sources
-of entropy available in chain along with the internal seed.
+Firstly, the block timestamp is not terribly unpredictable and so it's one of the strongest sources
+of entropy available in any chain along with the internal seed.
 
 Ideally, the caller of Random function should not have interest in the result, nor let
 interested users choose at which block the contract will be called.
 
-If you're in need of a highly secure alternative, it may be best to look into oracles [such as oraclize](https://docs.oraclize.it/#security-deepdive-advanced-datasources-random-data-source)
+If security is a main focus over reliability, it may be best to look into purchasing oracles [such as oraclize](https://docs.oraclize.it/#security-deepdive-advanced-datasources-random-data-source)
 
 # Usage
 
