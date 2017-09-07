@@ -1,6 +1,6 @@
 {
   "name": "eth-random",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An Ethereum contract for generating pseudo-random numbers",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
   "author": "Axiom Zen <dev@axiomzen.co> (https://www.axiomzen.co/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/axiomzen/eth-random-eth/issues"
+    "url": "https://github.com/axiomzen/eth-random/issues"
   },
   "contributors": [
     "Kai Aldag (https://github.com/KaiCode2)",
