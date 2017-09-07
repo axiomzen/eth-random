@@ -4,7 +4,7 @@
 
 Eth-Random is an Ethereum contract for generating pseudo-random numbers.
 
-Our goal - Implementing the simplest and efficient ways to generate
+Our goal - Implementing the simplest and most efficient ways to generate
 a random number of arbitrary size over the Ethereum network.
 
 The motivation for this project came from a need for a true and cheap way
