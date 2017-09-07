@@ -101,10 +101,4 @@ Given 208 runs
 
 ## Contributing
 
-- Ensure the task you're completing has an issue and and has no assignee
-- Before beginning work on a task, assign yourself to the task
-- Fork the repo
-- Complete task on your Fork
-- Create PR against the branch you forked from
-- Get PR reviewed (you may be asked for changes, if so, implement them in the same PR)
-- PR will be merged by maintainers
+Please see [CONTRIBUTING.md](./CONTRIBUTING.md)
