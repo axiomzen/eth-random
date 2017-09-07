@@ -12,6 +12,8 @@ to create random assets. Despite a couple of posts and comments found on the int
 of our approach comes from growth via developer usage! The more people using the same
 contract the more the internal _seed_ value becomes unpredictable, generating stronger results.
 
+See the [example of how to use eth-random in a simple RPG](./example/contracts/RPG.sol)
+
 ## Caveats
 
 Firstly, the block timestamp is not terribly unpredictable and yet it's one of the strongest sources
@@ -35,38 +37,27 @@ The Ethereum contract can be found at the following addresses:
 ### Ropsten
 - random: `0x1637140C895e01d14be5a7A42Ec2c5BB22893713` [etherscan](https://ropsten.etherscan.io/address/0x1637140c895e01d14be5a7a42ec2c5bb22893713#code)
 
-*On a local test network:*
-In a local test network, you can use random by deploying [the source](./contracts/Random.sol). After deploying the contract, locate the address it occupies.
+### Using in truffle
 
-### Step 1: Declare the random interface
+Install with `npm install eth-random`
 
-You may use it with truffle (say creating a file "RandomAPI.sol") or copying into your contract.
-
-```solidity
-contract RandomAPI {
-  function random(uint64 upper) public returns (uint64 randomNumber);
-}
-```
-
-### Step 2: Initialize and use random
+### Initialize and use random
 
 Once you've located the contract's address, you can initialize the API with the address.
 
 ```solidity
-import { RandomAPI } from "RandomAPI.sol";
+import "eth-random/contracts/Random.sol";
 
 contract Foo {
-  RandomAPI api = RandomAPI(/* Add address here */);
+  Random api = Random(/* set address here */);
 
-  function favouriteNumber() returns (uint64) {
-    return api.random(10**6 - 1);
+  function rollDice() returns (uint64) {
+    return api.random(6);
   }
 }
 ```
 
 We can use it wherever we want the joy of randomness!
-
-
 
 
 ## Statistics

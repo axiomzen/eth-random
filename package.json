@@ -6,7 +6,10 @@
     "type": "git",
     "url": "git+https://github.com/axiomzen/eth-random.git"
   },
-  "keywords": ["solidity", "random"],
+  "keywords": [
+    "solidity",
+    "random"
+  ],
   "author": "Axiom Zen <dev@axiomzen.co> (https://www.axiomzen.co/)",
   "license": "MIT",
   "bugs": {
@@ -18,6 +21,8 @@
     "Jordan Schalm <jordan.schalm@gmail.com> (https://github.com/jordanschalm)"
   ],
   "dependencies": {},
-  "engines": { "node": ">=6" },
+  "engines": {
+    "node": ">=6"
+  },
   "homepage": "https://github.com/axiomzen/eth-random"
 }
