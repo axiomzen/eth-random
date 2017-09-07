@@ -14,10 +14,10 @@ contract the more the internal _seed_ value becomes unpredictable, generating st
 
 ## Caveats
 
-Firstly, the block timestamp is not terribly unpredictable and so it's one of the strongest sources
-of entropy available in any chain along with the internal seed.
+Firstly, the block timestamp is not terribly unpredictable and yet it's one of the strongest sources
+of entropy available in the blockchain along with contract's internal seed.
 
-Ideally, the caller of Random function should not have interest in the result, nor let
+Ideally, the caller of Random function should have minimal interest in the result, nor let
 interested users choose at which block the contract will be called.
 
 If security is a main focus over reliability, it may be best to look into purchasing oracles [such as oraclize](https://docs.oraclize.it/#security-deepdive-advanced-datasources-random-data-source)
