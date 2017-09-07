@@ -12,8 +12,6 @@ to create random assets. Despite a couple of posts and comments found on the int
 of our approach comes from growth via developer usage! The more people using the same
 contract the more the internal _seed_ value becomes unpredictable, generating stronger results.
 
-See the [example of how to use eth-random in a simple RPG](./example/contracts/RPG.sol)
-
 ## Caveats
 
 Firstly, the block timestamp is not terribly unpredictable and yet it's one of the strongest sources
@@ -57,8 +55,7 @@ contract Foo {
 }
 ```
 
-We can use it wherever we want the joy of randomness!
-
+**See [a simple RPG example](./example/contracts/RPG.sol)**
 
 ## Statistics
 
