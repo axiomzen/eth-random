@@ -20,7 +20,7 @@ of entropy available in the blockchain along with contract's internal seed.
 Ideally, the caller of Random function should have minimal interest in the result, nor let
 interested users choose at which block the contract will be called.
 
-If security is a main focus over reliability, it may be best to look into purchasing oracles [such as oraclize](https://docs.oraclize.it/#security-deepdive-advanced-datasources-random-data-source)
+If security is a main focus, it may be best to look into purchasing a oracle solution [such as oraclize](https://docs.oraclize.it/#security-deepdive-advanced-datasources-random-data-source)
 
 # Usage
 
@@ -59,7 +59,7 @@ contract Foo {
 
 ## Stats
 
-Run 10,000 on a 1,000 range, using `testrpc` on locahost.  [link](https://docs.google.com/spreadsheets/d/1pHbvrnQVrLT6R9oM-oozeI5d5uEIx-6eDhhZ8f5vkVg/edit#gid=0)
+Run 10,000 on a 1,000 range, using `testrpc` on locahost [data spreadsheet](https://docs.google.com/spreadsheets/d/1pHbvrnQVrLT6R9oM-oozeI5d5uEIx-6eDhhZ8f5vkVg/edit#gid=0). Distribution:
 
 ![graph](./assets/graph.png)
 
