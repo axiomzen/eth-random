@@ -7,11 +7,10 @@ async function sleep(time) {
 }
 
 contract("Random", async function(accounts) {
-  const numberOfChecks = 10000;
+  const numberOfChecks = 100;
 
   it("should output between the lower and upper bound", async function() {
-    this.timeout(1e8);
-    const max = 1000;
+    const max = 100000;
     console.log("    Verifying though brute force: may take a while...");
     console.log("    Running: " + numberOfChecks + " checks");
 
@@ -24,8 +23,7 @@ contract("Random", async function(accounts) {
       let random = await generator.output();
       assert(random.toNumber() >= 0, "Random number was under minimum.");
       assert(random.toNumber() <= max, "Random number was over maximum.");
-      results.push(random.toNumber() + 1);
-      console.log(random.toNumber() + 1);
+      results.push(random.toNumber());
     }
 
     // after the loop is done wait a bit for events to finish recording
