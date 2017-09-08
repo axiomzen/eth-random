@@ -1,60 +1,61 @@
-# Random for Solidity
-An Ethereum contract for generating pseudo-random numbers.
+# Random for Solidity (eth-random)
 
+<a href="https://zenhub.com"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png"></a>
 
-## Usage
+Eth-Random is an Ethereum contract for generating pseudo-random numbers.
 
-### Step 0: Locating the contract
+Our goal - Implementing the simplest and most efficient ways to generate
+a random number of arbitrary size over the Ethereum network.
 
-*On the Ethereum network:*
-The Ethereum contract can be found at the address: `TODO: Add deployed address`.
+The motivation for this project came from a need for a true and cheap way
+to create random assets. Despite a couple of posts and comments found on the internet, we couldn't find a single common resource. However, the beauty and strength
+of our approach comes from growth via developer usage! The more people using the same
+contract the more the internal _seed_ value becomes unpredictable, generating stronger results.
 
-*On a local test network:*
-In a local test network, you can use random by either deploying [the source](./contracts/Random.sol) or the byte code (run `truffle compile` then grab byte code from build). After deploying the contract, locate the address it occupies.
+## Caveats
 
-### Step 1: Add random protocol
+Firstly, the block timestamp is not terribly unpredictable and yet it's one of the strongest sources
+of entropy available in the blockchain along with contract's internal seed.
 
-In order to interact with random in a convenient manner, we'll create a contract that declares the types of random we wish to use. (Note: see [here](`TODO: add link to types of random doc`))
+Ideally, the caller of Random function should have minimal interest in the result, nor let
+interested users choose at which block the contract will be called.
 
+If security is a main focus over reliability, it may be best to look into purchasing oracles [such as oraclize](https://docs.oraclize.it/#security-deepdive-advanced-datasources-random-data-source)
 
+# Usage
 
-``` Solidity
-contract RandomAPI {
-  function random(uint64 upper) public returns (uint64 randomNumber);
-}
-```
+The Ethereum contract can be found at the following addresses:
 
-### Step 2: Initialize random
+### Main net
+- random: `0x0230CfC895646d34538aE5b684d76Bf40a8B8B89` [etherscan](https://etherscan.io/address/0x0230CfC895646d34538aE5b684d76Bf40a8B8B89#code)
 
-Once you've located the contract's address and have an API, you can initialize the API with the address.
+### Rinkeby
+- random: `0x606b7f97bFEaCDf430059e6ef8918F2BaD1EF7FD` [etherscan](https://rinkeby.etherscan.io/address/0x606b7f97bFEaCDf430059e6ef8918F2BaD1EF7FD#code)
 
-``` Solidity
-import { RandomAPI } from "RandomAPI.sol";
+### Ropsten
+- random: `0x1637140C895e01d14be5a7A42Ec2c5BB22893713` [etherscan](https://ropsten.etherscan.io/address/0x1637140c895e01d14be5a7a42ec2c5bb22893713#code)
+
+### Using in truffle
+
+Install with `npm install eth-random`
+
+### Initialize and use random
+
+Once you've located the contract's address, you can initialize the API with the address.
+
+```solidity
+import "eth-random/contracts/Random.sol";
 
 contract Foo {
-  RandomAPI api = RandomAPI(/* Add address here */);
-}
-```
+  Random api = Random(/* set address here */);
 
-### Step 3: Use random
-
-Now that we have our variable initialized, we can use it wherever we want the joy of randomness!
-
-``` Solidity
-import { RandomAPI } from "RandomAPI.sol";
-
-contract Foo {
-  RandomAPI api = RandomAPI(/* Add address here */);
-
-  function favouriteNumber() returns (uint64) {
-    return api.random(2**64 - 1);
+  function rollDice() returns (uint64) {
+    return api.random(6);
   }
 }
 ```
 
-## Disclosure
-
-Given the distributed, decentralized nature of dapps, a miner with significant hashing power has potential to influence the Random's output by manipulating the block timestamp. If you're in need of a highly secure alternative, it may be best to pursue an off-chain oracle.
+**See [a simple RPG example](./example/contracts/RPG.sol)**
 
 ## Statistics
 
@@ -86,18 +87,6 @@ Given 208 runs
 | 7 |      16 |
 
 
-### 0 - 10000
-
-Given 150 runs
-
-All occurrences were unique
-
 ## Contributing
 
-- Ensure the task you're completing has an issue and and has no assignee
-- Before beginning work on a task, assign yourself to the task
-- Fork the repo
-- Complete task on your Fork
-- Create PR
-- Get PR reviewed (you may be asked for changes, if so, implement them in the same PR)
-- PR will be merged by maintainers!
+Please see [CONTRIBUTING.md](./CONTRIBUTING.md)

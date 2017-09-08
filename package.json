@@ -1,19 +1,28 @@
 {
   "name": "eth-random",
-  "version": "1.0.0",
-  "description": "An Ethereum contract for generating pseudo-random numbers.",
+  "version": "0.0.3",
+  "description": "An Ethereum contract for generating pseudo-random numbers",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/axiomzen/random-eth.git"
+    "url": "git+https://github.com/axiomzen/eth-random.git"
   },
   "keywords": [
     "solidity",
     "random"
   ],
   "author": "Axiom Zen <dev@axiomzen.co> (https://www.axiomzen.co/)",
-  "license": "MIT License",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/axiomzen/random-eth/issues"
+    "url": "https://github.com/axiomzen/eth-random/issues"
   },
-  "homepage": "https://github.com/axiomzen/random-eth#readme"
+  "contributors": [
+    "Kai Aldag (https://github.com/KaiCode2)",
+    "Fabiano P. Soriani <fabianosoriani@gmail.com> (https://github.com/flockonus)",
+    "Jordan Schalm <jordan.schalm@gmail.com> (https://github.com/jordanschalm)"
+  ],
+  "dependencies": {},
+  "engines": {
+    "node": ">=6"
+  },
+  "homepage": "https://github.com/axiomzen/eth-random"
 }
