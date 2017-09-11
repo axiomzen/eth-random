@@ -20,7 +20,7 @@ of entropy available in the blockchain along with contract's internal seed.
 Ideally, the caller of Random function should have minimal interest in the result, nor let
 interested users choose at which block the contract will be called.
 
-If security is a main focus, it may be best to look into purchasing a oracle solution [such as oraclize](https://docs.oraclize.it/#security-deepdive-advanced-datasources-random-data-source)
+If security is a main focus, it may be best to look into purchasing an oracle solution [such as oraclize](https://docs.oraclize.it/#security-deepdive-advanced-datasources-random-data-source)
 
 # Usage
 
