@@ -6,14 +6,14 @@
     "type": "git",
     "url": "git+https://github.com/axiomzen/eth-random.git"
   },
-  "keywords": [
-    "solidity",
-    "random"
-  ],
+  "keywords": ["solidity", "random"],
   "author": "Axiom Zen <dev@axiomzen.co> (https://www.axiomzen.co/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/axiomzen/eth-random/issues"
+  },
+  "scripts": {
+    "test": "truffle test"
   },
   "contributors": [
     "Kai Aldag (https://github.com/KaiCode2)",
@@ -24,5 +24,8 @@
   "engines": {
     "node": ">=6"
   },
-  "homepage": "https://github.com/axiomzen/eth-random"
+  "homepage": "https://github.com/axiomzen/eth-random",
+  "devDependencies": {
+    "mocha": "3.5.0"
+  }
 }

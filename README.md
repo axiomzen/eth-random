@@ -20,7 +20,7 @@ of entropy available in the blockchain along with contract's internal seed.
 Ideally, the caller of Random function should have minimal interest in the result, nor let
 interested users choose at which block the contract will be called.
 
-If security is a main focus over reliability, it may be best to look into purchasing oracles [such as oraclize](https://docs.oraclize.it/#security-deepdive-advanced-datasources-random-data-source)
+If security is a main focus, it may be best to look into purchasing an oracle solution [such as oraclize](https://docs.oraclize.it/#security-deepdive-advanced-datasources-random-data-source)
 
 # Usage
 
@@ -29,10 +29,10 @@ The Ethereum contract can be found at the following addresses:
 ### Main net
 - random: `0x0230CfC895646d34538aE5b684d76Bf40a8B8B89` [etherscan](https://etherscan.io/address/0x0230CfC895646d34538aE5b684d76Bf40a8B8B89#code)
 
-### Rinkeby
+### Rinkeby (test)
 - random: `0x606b7f97bFEaCDf430059e6ef8918F2BaD1EF7FD` [etherscan](https://rinkeby.etherscan.io/address/0x606b7f97bFEaCDf430059e6ef8918F2BaD1EF7FD#code)
 
-### Ropsten
+### Ropsten (test)
 - random: `0x1637140C895e01d14be5a7A42Ec2c5BB22893713` [etherscan](https://ropsten.etherscan.io/address/0x1637140c895e01d14be5a7a42ec2c5bb22893713#code)
 
 ### Using in truffle
@@ -57,35 +57,20 @@ contract Foo {
 
 **See [a simple RPG example](./example/contracts/RPG.sol)**
 
-## Statistics
+## Stats
 
-### 0 - 100 000
+Run 10,000 on a 1,000 range, using `testrpc` on locahost [data spreadsheet](https://docs.google.com/spreadsheets/d/1pHbvrnQVrLT6R9oM-oozeI5d5uEIx-6eDhhZ8f5vkVg/edit#gid=0). Distribution:
 
-Given 5000 runs
+![graph](./assets/graph.png)
 
-| Occurrences | Share |
-|-------------|-------|
-| 1 | 97.6% (4 880) |
-| 2 | 2.38% (119) |
-| 3 | 0.02% (1) |
+average: 503.3
+std deviation: 287.3
 
-### 0-9
+## Test
 
-Given 208 runs
+Have [truffle framework](http://truffleframework.com/) and [testrpc](https://github.com/ethereumjs/testrpc) installed and running.
 
-|      Item      | Occurrences  |
-|----------|-------------|
-| 1 |      26 |
-| 4 |      25 |
-| 5 |      23 |
-| 0 |      21 |
-| 3 |      20 |
-| 8 |      20 |
-| 2 |      19 |
-| 6 |      19 |
-| 9 |      19 |
-| 7 |      16 |
-
+`npm test`
 
 ## Contributing
 

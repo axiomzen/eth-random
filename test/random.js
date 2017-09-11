@@ -6,7 +6,7 @@ async function sleep(time) {
   });
 }
 
-contract('Random', async function(accounts) {
+contract("Random", async function(accounts) {
   const numberOfChecks = 100;
 
   it("should output between the lower and upper bound", async function() {
@@ -30,13 +30,19 @@ contract('Random', async function(accounts) {
     await sleep(500);
 
     let sum = 0;
-    results.forEach(x => sum += x);
+    results.forEach(x => (sum += x));
     const avg = sum / results.length;
 
-    console.log('    random avg:', sum / results.length, 'out of', max, 'upper bound');
+    console.log(
+      "    random avg:",
+      sum / results.length,
+      "out of",
+      max,
+      "upper bound"
+    );
     // make sure the average is within a certain margin
-    assert(avg > max * 0.4, 'avg of sample results must be within 10% of half');
-    assert(avg < max * 0.6, 'avg of sample results must be within 10% of half');
+    assert(avg > max * 0.4, "avg of sample results must be within 10% of half");
+    assert(avg < max * 0.6, "avg of sample results must be within 10% of half");
 
     return;
   });
