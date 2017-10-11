@@ -16,6 +16,14 @@ contract("Random", async function(accounts) {
 
     const generator = await Random.deployed();
 
+    for (let i = 1; i < 10; i++) {
+      await generator.produceRandom16();
+      const out = (await generator.getOutput16()).map(x => x.toNumber());
+      // console.log(x.toNumber() % 100)
+      console.log("output16", out);
+      // TODO actual testing
+    }
+
     const results = [];
 
     for (let i = 1; i < numberOfChecks; i++) {
