@@ -1,6 +1,6 @@
 {
   "name": "eth-random",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An Ethereum contract for generating pseudo-random numbers",
   "repository": {
     "type": "git",
