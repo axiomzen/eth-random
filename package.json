@@ -1,6 +1,6 @@
 {
   "name": "eth-random",
-  "version": "0.0.4-alpha.1",
+  "version": "0.0.4-alpha.2",
   "description": "An Ethereum contract for generating pseudo-random numbers",
   "repository": {
     "type": "git",
@@ -13,19 +13,25 @@
     "url": "https://github.com/axiomzen/eth-random/issues"
   },
   "scripts": {
+    "truffle": "truffle",
+    "testrpc":
+      "testrpc --gasLimit 5000000 --account=\"0xe6986038796c774d5046fe7033b4af8c070c474bf963fc6129156796f1904241,10000000000000000000000\"",
     "test": "truffle test"
   },
   "contributors": [
+    "Dieter Shirley <dete@axiomzen.co> (https://github.com/dete)",
     "Kai Aldag (https://github.com/KaiCode2)",
     "Fabiano P. Soriani <fabianosoriani@gmail.com> (https://github.com/flockonus)",
     "Jordan Schalm <jordan.schalm@gmail.com> (https://github.com/jordanschalm)"
   ],
   "dependencies": {},
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "homepage": "https://github.com/axiomzen/eth-random",
   "devDependencies": {
-    "mocha": "3.5.0"
+    "ethereumjs-testrpc": "6.0.1",
+    "mocha": "3.5.0",
+    "truffle": "4.0.1"
   }
 }
