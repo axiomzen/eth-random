@@ -19,15 +19,14 @@ contract("Random", async function(accounts) {
     const results = [];
 
     for (let i = 1; i < numberOfChecks; i++) {
+      // call the random and store the result in wrapper
       await generator.produceRandom(max);
+      // get the result from the last run
       let random = await generator.output();
       assert(random.toNumber() >= 0, "Random number was under minimum.");
       assert(random.toNumber() <= max, "Random number was over maximum.");
       results.push(random.toNumber());
     }
-
-    // after the loop is done wait a bit for events to finish recording
-    await sleep(500);
 
     let sum = 0;
     results.forEach(x => (sum += x));
