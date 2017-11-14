@@ -4,7 +4,7 @@ contract Random {
   uint256 _seed;
 
   // The upper bound of the number returns is 2^bits - 1
-  function _bitSlice(uint256 n, uint256 bits, uint256 slot) internal constant returns(uint256) {
+  function bitSlice(uint256 n, uint256 bits, uint256 slot) public pure returns(uint256) {
       uint256 offset = slot * bits;
       // mask is made by shifting left an offset number of times
       uint256 mask = uint256((2**bits) - 1) << offset;

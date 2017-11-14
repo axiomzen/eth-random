@@ -7,7 +7,7 @@ contract RandomWrapper {
   Random random;
   uint256 public output;
 
-  function RandomWrapper(address randomContractAddress) {
+  function RandomWrapper(address randomContractAddress) public {
     random = Random(randomContractAddress);
   }
 

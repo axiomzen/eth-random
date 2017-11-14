@@ -6,7 +6,10 @@
     "type": "git",
     "url": "git+https://github.com/axiomzen/eth-random.git"
   },
-  "keywords": ["solidity", "random"],
+  "keywords": [
+    "solidity",
+    "random"
+  ],
   "author": "Axiom Zen <dev@axiomzen.co> (https://www.axiomzen.co/)",
   "license": "MIT",
   "bugs": {
@@ -14,8 +17,7 @@
   },
   "scripts": {
     "truffle": "truffle",
-    "testrpc":
-      "testrpc --gasLimit 5000000 --account=\"0xe6986038796c774d5046fe7033b4af8c070c474bf963fc6129156796f1904241,10000000000000000000000\"",
+    "testrpc": "testrpc --gasLimit 5000000 --account=\"0xe6986038796c774d5046fe7033b4af8c070c474bf963fc6129156796f1904241,10000000000000000000000\"",
     "test": "truffle test"
   },
   "contributors": [
@@ -30,8 +32,6 @@
   },
   "homepage": "https://github.com/axiomzen/eth-random",
   "devDependencies": {
-    "ethereumjs-testrpc": "6.0.1",
-    "mocha": "3.5.0",
     "truffle": "4.0.1"
   }
 }
