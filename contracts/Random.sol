@@ -13,7 +13,12 @@ contract Random {
   }
 
   function maxRandom() public returns (uint256 randomNumber) {
-    _seed = uint256(keccak256(_seed, block.blockhash(block.number - 1), block.coinbase));
+    _seed = uint256(keccak256(
+        _seed,
+        block.blockhash(block.number - 1),
+        block.coinbase,
+        block.difficulty
+    ));
     return _seed;
   }
 
