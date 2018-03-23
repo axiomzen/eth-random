@@ -1,3 +1,9 @@
+## Important note:
+
+We ultimately **recommend not using this module**, or this pattern in general. The reason is that it's fundamentally flawed and we can't recover from. A smart contract can call the random function and it can decide wether or not the result is beneficial, and in case it isn't then `revert` the operation.
+
+This approach was originally meant to be used in cryptokitties, but we ended up going with a safer more robust commit-reveal approach that relies on block hash as seed.
+
 # Random for Solidity (eth-random)
 
 <a href="https://zenhub.com"><img src="https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png"></a>
