@@ -54,5 +54,5 @@ This technique gas cost is pretty low. The most costly element requires the cost
 PR > new issue. Welcome pull requests that:
 
 1. Improve the quality of the information
-1. Adds an example in solidity
+1. Adds an example in solidity [#8](https://github.com/axiomzen/eth-random/issues/8)
 1. Adds links of interest
