@@ -8,7 +8,8 @@ The main constraints we conformed to are:
 1. Run cheaply
 2. Be unpredictable and not manipulable
 
-At the time a kitty gets pregnant we know from which block it will be able to be born, let's call the block height _DDB_. Therefore we save DDB to the kitty struct at time of pregnancy. Then after DDB is achieved, a birther will call the give birth function, which is roughly: `R = uint256(keccak256(DDB-1))` [1].
+At the time a kitty gets pregnant we know from which block it will be able to be born, let's call the block height _DDB_. Therefore we save DDB to the kitty struct at time of pregnancy.  
+Then after DDB is achieved, a birther will call the give birth function, which is roughly: `R = uint256(block.blockhash(DDB-1))` [1].
 
 For Cryptokitties purposes, other elements go into this hash as well, BUT it's important that any elements that go into that hashing are unable to be changed.
 
