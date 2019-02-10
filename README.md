@@ -1,6 +1,6 @@
 # RNG on Ethereum blockchain
 
-Obtaining a reliable source of randomness on Ethereum is no easy task. The best pattern we chose to ultimately implement on CryptoKitties is known as commit-reveal.
+Obtaining a reliable source of randomness on Ethereum is no easy task. The best pattern we chose to ultimately implement on CryptoKitties is known as commit-reveal. **[See original GeneScience contract here for an example](https://etherscan.io/address/0xf97e0a5b616dffc913e72455fde9ea8bbe946a2b#code)**
 
 The main constraints we conformed to are:
 
@@ -45,6 +45,7 @@ This technique gas cost is pretty low. The most costly element requires the cost
 
 ## Links of interest:
 
+1. [Cryptokitties blog post on GeneScience](https://www.cryptokitties.co/blog/post/learn-how-our-last-mystery-smart-contract-works/)
 1. [@Razor talk on the topic](https://raz0r.name/talks/predicting-random-numbers-in-ethereum-smart-contracts/)
 1. [Consensys Smart contract recommendations](https://consensys.github.io/smart-contract-best-practices/recommendations/#gameability)
 1. [A multi input based random generation](https://github.com/randao/randao)
