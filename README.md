@@ -45,6 +45,7 @@ This technique gas cost is pretty low. The most costly element requires the cost
 
 ## Links of interest:
 
+1. [Presentation at Ethdenver 2019 about random-number generation](https://www.youtube.com/watch?v=qkxG1dPU6iI)
 1. [Cryptokitties blog post on GeneScience](https://www.cryptokitties.co/blog/post/learn-how-our-last-mystery-smart-contract-works/)
 1. [@Razor talk on the topic](https://raz0r.name/talks/predicting-random-numbers-in-ethereum-smart-contracts/)
 1. [Consensys Smart contract recommendations](https://consensys.github.io/smart-contract-best-practices/recommendations/#gameability)
