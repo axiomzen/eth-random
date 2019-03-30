@@ -35,7 +35,7 @@ No user should be able to seed or tamper with the RNG input. As we discussed in 
 
 Miners are a powerful force in every aspect that comes into play when creating a block, because well, they create the blocks. Block hashes happen to be the hardest element to meddle with due to how PoW functions, miners are lucky to mine a block and get it's reward, by essentially finding a fitting hash, and if a miner is to keep on re-hashing the block until it's satisfied with the hashing result, it will end up failing to be the winner for that block height, as other miners will propose a block before them.
 
-Given the current state of the protocol, the described RNG method seems safe, WHEN the possible reward from the RNG result is not big enough to get the strongest miners to collude.
+Given the current state of Ethereum, the described RNG method seems safe, as long as the possible reward from the RNG result is not big enough to have miners altering their mining behaviour. Such [value is estimated at 0.25ETH](https://twitter.com/nicksdjohnson/status/1111483624749064192).
 
 With Casper PoS changes in 2020, RNG methods that rely on blockhash entropy might become more easily exploitable.
 
